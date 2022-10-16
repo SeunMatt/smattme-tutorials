@@ -1,0 +1,16 @@
+spring:
+  rabbitmq:
+    host: localhost
+    password: guest
+    username: guest
+    port: 5672
+logging:
+  level:
+    root: debug
+
+smattme:
+  worker-config:
+    queue-names:
+      - SMS_QUEUE
+      - EMAIL_QUEUE
+      - GCM_QUEUE

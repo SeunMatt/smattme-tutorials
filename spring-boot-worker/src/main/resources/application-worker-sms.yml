@@ -1,0 +1,4 @@
+smattme:
+  worker-config:
+    queue-names:
+      - SMS_QUEUE
