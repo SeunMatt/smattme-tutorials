@@ -20,6 +20,7 @@
         <module>spring-boot-worker</module>
         <module>spring-boot-request-validator</module>
         <module>spring-boot-flyway</module>
+        <module>springboot-database-transaction</module>
         <module>vavr</module>
     </modules>
 
