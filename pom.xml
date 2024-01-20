@@ -23,6 +23,7 @@
         <module>springboot-database-transaction</module>
         <module>vavr</module>
         <module>hmac</module>
+        <module>apikey</module>
     </modules>
 
 </project>
