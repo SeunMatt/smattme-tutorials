@@ -1,5 +1,6 @@
 package com.smattme.apikey.filters;
 
+import com.smattme.apikey.config.ApiKeyFilterConfig;
 import com.smattme.apikey.helpers.ClientAuthenticationHelper;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -16,9 +17,17 @@ import java.util.Collections;
 public class ApiKeyFilter extends OncePerRequestFilter {
 
     private final ClientAuthenticationHelper authServiceHelper;
+    private final ApiKeyFilterConfig config;
 
-    public ApiKeyFilter(ClientAuthenticationHelper authServiceHelper) {
+    public ApiKeyFilter(ClientAuthenticationHelper authServiceHelper, ApiKeyFilterConfig config) {
         this.authServiceHelper = authServiceHelper;
+        this.config = config;
+    }
+
+    @Override
+    protected boolean shouldNotFilter(HttpServletRequest request) throws ServletException {
+        var path = request.getRequestURI();
+        return !path.startsWith(config.getPathPrefix());
     }
 
     @Override
@@ -28,7 +37,7 @@ public class ApiKeyFilter extends OncePerRequestFilter {
         String reqApiKey = request.getHeader("Api-Key");
         boolean isApiKeyValid = authServiceHelper.validateApiKey(reqApiKey);
 
-        if(!isApiKeyValid) {
+        if (!isApiKeyValid) {
             //return 401 Unauthorized
             response.sendError(HttpStatus.UNAUTHORIZED.value(), "Invalid API Key");
             return;

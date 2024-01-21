@@ -14,9 +14,11 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class WebSecurityConfig {
 
     private final ClientAuthenticationHelper authServiceHelper;
+    private final ApiKeyFilterConfig config;
 
-    public WebSecurityConfig(ClientAuthenticationHelper authServiceHelper) {
+    public WebSecurityConfig(ClientAuthenticationHelper authServiceHelper, ApiKeyFilterConfig config) {
         this.authServiceHelper = authServiceHelper;
+        this.config = config;
     }
 
 
@@ -24,13 +26,14 @@ public class WebSecurityConfig {
     public SecurityFilterChain configure(HttpSecurity http) throws Exception {
 
         //add the ApiKeyFilter to the security chain
-        http.addFilterBefore(new ApiKeyFilter(authServiceHelper),
+        http.addFilterBefore(new ApiKeyFilter(authServiceHelper, config),
                 AnonymousAuthenticationFilter.class);
 
         //configure the security chain to authenticate all endpoints
         //except the /error
         http.authorizeHttpRequests(requests ->
                 requests.requestMatchers(new AntPathRequestMatcher("/error")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher(Routes.WEB_INDEX)).permitAll()
                         .anyRequest().authenticated()
         );
 
