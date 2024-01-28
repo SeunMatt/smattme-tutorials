@@ -24,6 +24,7 @@
         <module>vavr</module>
         <module>hmac</module>
         <module>apikey</module>
+        <module>rsa</module>
     </modules>
 
 </project>
