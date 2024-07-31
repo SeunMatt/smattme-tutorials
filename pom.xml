@@ -25,6 +25,8 @@
         <module>hmac</module>
         <module>apikey</module>
         <module>rsa</module>
+        <module>micrometer-tracing</module>
+        <module>aes</module>
     </modules>
 
 </project>
