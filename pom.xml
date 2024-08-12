@@ -27,6 +27,7 @@
         <module>rsa</module>
         <module>micrometer-tracing</module>
         <module>aes</module>
+        <module>spring-boot-hmac-signature</module>
     </modules>
 
 </project>
