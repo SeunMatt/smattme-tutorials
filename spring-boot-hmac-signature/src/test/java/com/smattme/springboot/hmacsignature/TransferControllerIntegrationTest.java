@@ -55,18 +55,6 @@ public class TransferControllerIntegrationTest {
     void givenValidRequestSignatureAndBasicAuth_whenTransferFund_thenReturnOK()
             throws Exception {
 
-//        User user = userRepository.findByEmail("olusola.cypher@example.com");
-//
-//        UserSecretKey userSecretKey = new UserSecretKey();
-//        userSecretKey.setUser(user);
-//        userSecretKey.setHmacSecretKey("karibuChangeMe");
-//        userSecretKey.setClientId("olusola.cypher@example.com");
-//        userSecretKey = userSecretKeyRepository.save(userSecretKey);
-//
-//        log.info("userSecretKey: {}", userSecretKey.getHmacSecretKey());
-//
-//        Thread.sleep(10000000000L);
-
         String basicAuthUsername = "olusola.cypher@example.com";
         String basicAuthPassword = "karibuChangeMe";
         String hmacSecret = "karibuChangeMe";
