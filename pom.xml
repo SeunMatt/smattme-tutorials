@@ -29,6 +29,7 @@
         <module>aes</module>
         <module>spring-boot-hmac-signature</module>
         <module>dbcolumnencryption</module>
+        <module>html-ui</module>
     </modules>
 
 </project>
