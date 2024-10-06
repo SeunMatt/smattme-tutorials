@@ -1,0 +1,25 @@
+./
+├── HELP.md
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com
+│   │   │       └── smattme
+│   │   │           └── springbootintro
+│   │   │               └── SpringBootIntroApplication.java
+│   │   └── resources
+│   │       ├── application.properties
+│   │       ├── static
+│   │       └── templates
+│   └── test
+│       └── java
+│           └── com
+│               └── smattme
+│                   └── springbootintro
+│                       └── SpringBootIntroApplicationTests.java
+└── tree-output.txt
+
+15 directories, 8 files

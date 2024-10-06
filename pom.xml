@@ -30,6 +30,7 @@
         <module>spring-boot-hmac-signature</module>
         <module>dbcolumnencryption</module>
         <module>html-ui</module>
+        <module>spring-boot-intro</module>
     </modules>
 
 </project>
