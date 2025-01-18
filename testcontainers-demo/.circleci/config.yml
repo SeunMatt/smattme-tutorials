@@ -1,0 +1,20 @@
+version: 2.1
+
+jobs:
+  build-and-test:
+    docker:
+      - image: cimg/openjdk:21.0
+    steps:
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - checkout
+      - run:
+          docker --version
+      - run:
+          name: Test
+          command: mvn -B clean test
+
+workflows:
+  build:
+    jobs:
+      - build-and-test
