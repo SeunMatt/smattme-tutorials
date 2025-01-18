@@ -31,6 +31,7 @@
         <module>dbcolumnencryption</module>
         <module>html-ui</module>
         <module>spring-boot-intro</module>
+        <module>testcontainers-demo</module>
     </modules>
 
 </project>
