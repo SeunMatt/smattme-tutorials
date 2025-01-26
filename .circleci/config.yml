@@ -5,10 +5,7 @@ jobs:
     docker:
       - image: cimg/openjdk:21.0
     steps:
-      - setup_remote_docker
       - checkout
-      - run:
-          docker --version
       - run:
           name: Test
           command: mvn -B clean test
