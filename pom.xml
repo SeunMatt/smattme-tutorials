@@ -32,6 +32,7 @@
         <module>html-ui</module>
         <module>spring-boot-intro</module>
         <module>testcontainers-demo</module>
+        <module>testcontainers-manual-config</module>
     </modules>
 
 </project>
