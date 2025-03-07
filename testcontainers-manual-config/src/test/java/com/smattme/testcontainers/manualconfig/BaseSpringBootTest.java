@@ -32,6 +32,7 @@ public class BaseSpringBootTest {
     static void registerDynamicProperties(DynamicPropertyRegistry registry) {
 
         postgresContainer.start();
+        redisContainer.start();
 
         registry.add("spring.r2dbc.url", () -> String.format(
                 "r2dbc:postgresql://%s:%d/%s",
@@ -45,7 +46,10 @@ public class BaseSpringBootTest {
         registry.add("spring.data.redis.host", redisContainer::getHost);
         registry.add("spring.data.redis.port", () -> redisContainer.getMappedPort(6379));
 
-        Runtime.getRuntime().addShutdownHook(new Thread(postgresContainer::stop));
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            postgresContainer.stop();
+            redisContainer.stop();
+        }));
     }
 
 
