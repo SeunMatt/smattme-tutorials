@@ -35,7 +35,7 @@ public class PetControllerIntegrationTest extends BaseSpringBootTest {
 
 
     @Test
-    void givenValidRequestBody_whenCreate_thenReturn2XX() throws Exception {
+    void givenValidRequestBody_whenCreate_thenReturn2XX() {
 
         PetRequest request = new PetRequest();
         request.setName("Aja Ode " + insecure().randomAlphabetic(5).toUpperCase());
@@ -51,7 +51,7 @@ public class PetControllerIntegrationTest extends BaseSpringBootTest {
     }
 
     @Test
-    void givenExistingPets_whenGetAll_thenReturnAllPets() throws Exception {
+    void givenExistingPets_whenGetAll_thenReturnAllPets() {
 
         Pet pet = new Pet();
         pet.setName("Blimey the Goat " + insecure().randomAlphabetic(5).toUpperCase());
